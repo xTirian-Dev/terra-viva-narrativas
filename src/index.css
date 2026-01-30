@@ -2,95 +2,107 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Terra Rural - Editorial Design System */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Earthy, warm palette inspired by Brazilian rural landscape */
+    --background: 40 30% 97%;
+    --foreground: 30 10% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 40 25% 95%;
+    --card-foreground: 30 10% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 40 30% 97%;
+    --popover-foreground: 30 10% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Deep forest green - primary brand */
+    --primary: 150 30% 25%;
+    --primary-foreground: 40 30% 97%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Warm terracotta */
+    --secondary: 25 45% 55%;
+    --secondary-foreground: 40 30% 97%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Wheat/cream muted tones */
+    --muted: 40 20% 90%;
+    --muted-foreground: 30 10% 40%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Golden accent */
+    --accent: 42 80% 55%;
+    --accent-foreground: 30 10% 15%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 40 30% 97%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 30 15% 85%;
+    --input: 30 15% 85%;
+    --ring: 150 30% 25%;
 
-    --radius: 0.5rem;
+    --radius: 0.25rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Typography */
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Inter', system-ui, sans-serif;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    /* Spacing for editorial rhythm */
+    --section-gap: 8rem;
+    --content-max-width: 720px;
+    --wide-max-width: 1200px;
 
-    --sidebar-primary: 240 5.9% 10%;
+    /* Gradients */
+    --gradient-hero: linear-gradient(180deg, hsl(30 10% 15% / 0.7) 0%, hsl(30 10% 15% / 0.3) 50%, transparent 100%);
+    --gradient-fade-bottom: linear-gradient(0deg, hsl(40 30% 97%) 0%, transparent 100%);
+    --gradient-overlay: linear-gradient(180deg, transparent 0%, hsl(30 10% 15% / 0.8) 100%);
 
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 40 25% 95%;
+    --sidebar-foreground: 30 10% 15%;
+    --sidebar-primary: 150 30% 25%;
+    --sidebar-primary-foreground: 40 30% 97%;
+    --sidebar-accent: 40 20% 90%;
+    --sidebar-accent-foreground: 30 10% 15%;
+    --sidebar-border: 30 15% 85%;
+    --sidebar-ring: 150 30% 25%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 30 10% 8%;
+    --foreground: 40 20% 92%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 30 10% 12%;
+    --card-foreground: 40 20% 92%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 30 10% 8%;
+    --popover-foreground: 40 20% 92%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 150 35% 45%;
+    --primary-foreground: 30 10% 8%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 25 40% 45%;
+    --secondary-foreground: 40 20% 92%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 30 10% 18%;
+    --muted-foreground: 40 15% 60%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 42 70% 50%;
+    --accent-foreground: 30 10% 8%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 40 20% 92%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 30 10% 20%;
+    --input: 30 10% 20%;
+    --ring: 150 35% 45%;
+
+    --sidebar-background: 30 10% 10%;
+    --sidebar-foreground: 40 20% 92%;
+    --sidebar-primary: 150 35% 45%;
+    --sidebar-primary-foreground: 30 10% 8%;
+    --sidebar-accent: 30 10% 15%;
+    --sidebar-accent-foreground: 40 20% 92%;
+    --sidebar-border: 30 10% 20%;
+    --sidebar-ring: 150 35% 45%;
   }
 }
 
@@ -99,7 +111,187 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: var(--font-sans);
+  }
+
+  /* Editorial Typography */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    @apply font-medium tracking-tight;
+  }
+
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+
+  .font-sans {
+    font-family: var(--font-sans);
+  }
+
+  /* Long-form reading optimization */
+  .prose-editorial {
+    font-family: var(--font-sans);
+    @apply text-lg leading-relaxed;
+    max-width: var(--content-max-width);
+  }
+
+  .prose-editorial p {
+    @apply mb-6;
+  }
+
+  .prose-editorial h2 {
+    font-family: var(--font-serif);
+    @apply text-3xl md:text-4xl mt-16 mb-6 font-medium;
+  }
+
+  .prose-editorial h3 {
+    font-family: var(--font-serif);
+    @apply text-2xl md:text-3xl mt-12 mb-4 font-medium;
+  }
+
+  .prose-editorial blockquote {
+    font-family: var(--font-serif);
+    @apply text-2xl md:text-3xl italic border-l-4 border-secondary pl-6 my-12 text-muted-foreground;
+  }
+
+  .prose-editorial figure {
+    @apply my-12 -mx-4 md:-mx-12;
+  }
+
+  .prose-editorial figcaption {
+    @apply text-sm text-muted-foreground mt-3 px-4 md:px-12;
+  }
+}
+
+@layer components {
+  /* Hero sections */
+  .hero-fullscreen {
+    @apply relative min-h-screen flex items-center justify-center overflow-hidden;
+  }
+
+  .hero-overlay {
+    background: var(--gradient-hero);
+  }
+
+  /* Scroll sections */
+  .scroll-section {
+    @apply min-h-screen flex items-center py-20;
+  }
+
+  /* Image treatments */
+  .image-full-bleed {
+    @apply w-full h-screen object-cover;
+  }
+
+  .image-editorial {
+    @apply w-full max-w-none;
+  }
+
+  /* Quote highlight */
+  .quote-highlight {
+    font-family: var(--font-serif);
+    @apply text-3xl md:text-5xl italic text-center py-20 px-8 text-secondary;
+  }
+
+  /* Section divider */
+  .section-divider {
+    @apply w-16 h-px bg-secondary mx-auto my-16;
+  }
+
+  /* Character card */
+  .character-card {
+    @apply relative overflow-hidden rounded-sm;
+  }
+
+  /* Sticky media */
+  .sticky-media {
+    @apply sticky top-0 h-screen flex items-center justify-center;
+  }
+
+  /* Navigation editorial */
+  .nav-editorial {
+    @apply fixed top-0 left-0 right-0 z-50 transition-all duration-500;
+  }
+
+  .nav-editorial.scrolled {
+    @apply bg-background/95 backdrop-blur-sm shadow-sm;
+  }
+
+  /* Button variants */
+  .btn-editorial {
+    @apply inline-flex items-center gap-2 px-6 py-3 text-sm font-medium tracking-wide uppercase transition-all duration-300;
+  }
+
+  .btn-editorial-primary {
+    @apply btn-editorial bg-primary text-primary-foreground hover:bg-primary/90;
+  }
+
+  .btn-editorial-outline {
+    @apply btn-editorial border border-foreground/20 hover:bg-foreground/5;
+  }
+
+  /* Caption styles */
+  .caption {
+    @apply text-xs uppercase tracking-widest text-muted-foreground;
+  }
+
+  /* Fade animations */
+  .fade-in-up {
+    @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+  }
+
+  .fade-in-up.visible {
+    @apply opacity-100 translate-y-0;
+  }
+}
+
+@layer utilities {
+  /* Text balance for headlines */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Full bleed utility */
+  .full-bleed {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
+
+  /* Parallax helper */
+  .parallax-container {
+    @apply relative overflow-hidden;
+  }
+
+  /* Reading width */
+  .max-w-reading {
+    max-width: var(--content-max-width);
+  }
+
+  .max-w-editorial {
+    max-width: var(--wide-max-width);
+  }
+
+  /* Aspect ratios for media */
+  .aspect-editorial {
+    aspect-ratio: 16 / 10;
+  }
+
+  .aspect-portrait {
+    aspect-ratio: 3 / 4;
+  }
+
+  /* Scroll snap */
+  .snap-section {
+    scroll-snap-align: start;
   }
 }
